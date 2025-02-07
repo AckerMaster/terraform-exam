@@ -72,7 +72,7 @@ resource "aws_route_table" "liad_public_rt_test" {
     }
 }
 
-resource "aws_route_table" "liad_public_rt_test" {
+resource "aws_route_table" "liad_private_rt_test" {
     # attaching the private rt to the vpc
     vpc_id = aws_vpc.liad_vpc_test.id
   
