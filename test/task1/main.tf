@@ -44,3 +44,14 @@ resource "aws_subnet" "liad_private_subnet_test" {
   }
 
 }
+
+# the internet gateway
+resource "aws_internet_gateway" "liad_internet_gateway_test" {
+  # attaching the igw to the vpc
+  vpc_id = aws_vpc.liad_vpc_test.id
+
+  tags = {
+    Name = "liad-internet-gateway-test"
+  }
+}
+
