@@ -1,0 +1,46 @@
+provider "aws" {
+  region = var.region
+}
+
+variable "region" {
+  default = "us-east-1"
+}
+
+resource "aws_vpc" "liad_vpc_test" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "liad-vpc-test"
+  }
+}
+
+# the public subnet
+resource "aws_subnet" "liad_public_subnet_test" {
+  vpc_id = aws_vpc.liad_vpc_test.id
+  cidr_block = "10.0.1.0/24"
+
+  # we want to enable recieving a public ip
+  map_public_ip_on_launch = true
+
+  availability_zone = "us-east-1a"
+
+   tags = {
+    Name = "liad-public-subnet-test"
+  }
+
+}
+
+# the private subnet
+resource "aws_subnet" "liad_private_subnet_test" {
+  vpc_id = aws_vpc.liad_vpc_test.id
+  cidr_block = "10.0.2.0/24"
+
+  map_public_ip_on_launch = false
+
+  availability_zone = "us-east-1b"
+
+   tags = {
+    Name = "liad-private-subnet-test"
+  }
+
+}
