@@ -80,3 +80,17 @@ resource "aws_route_table" "liad_public_rt_test" {
         Name = "liad-private-rt-test"
     }
 }
+
+
+# associating the routing tables with the subnets
+# (public with public, private with private)
+
+resource "aws_route_table_association" "liad_public_rt_association_test" {
+    subnet_id = aws_subnet.liad_public_subnet_test.id
+    route_table_id = aws_route_table.liad_public_rt_test.id
+}
+
+resource "aws_route_table_association" "liad_private_rt_association_test" {
+    subnet_id = aws_subnet.liad_private_subnet_test.id
+    route_table_id = aws_route_table.liad_private_rt_test.id
+}
