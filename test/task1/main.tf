@@ -62,7 +62,7 @@ resource "aws_route_table" "liad_public_rt_test" {
     vpc_id = aws_vpc.liad_vpc_test.id
   
     # associating the public rt with our internet gateway
-    route = {
+    route {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.liad_internet_gateway_test.id
     }
