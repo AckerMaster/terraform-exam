@@ -13,7 +13,10 @@ variable "region" {
 variable "vpc_id" {}
 
 #public subnets ids
-variable "public_subnet_ids" {}
+variable "public_subnet_ids" {
+    description = "List of public subnet IDs where alb and autoscaling group instances will be deployed"
+    type        = list(string)
+}
 
 # security group id
 variable "security_group_id" {}
