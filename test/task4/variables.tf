@@ -21,7 +21,15 @@ variable "public_subnet_ids" {
 # security group id
 variable "security_group_id" {}
 
+# name of our alb
+variable "alb_name" {
+    default = "liad-alb"
+}
 
+# name of our target group
+variable "tg_name" {
+    default = "liad-target-group"
+}
 
 # ----------------------------------------------------#
 # ----------- autoscaling related configurations -------------#
