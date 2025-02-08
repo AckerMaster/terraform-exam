@@ -10,16 +10,23 @@ variable "region" {
 # ----------- alb related configurations -------------#
 
 #vpc id
-variable "vpc_id" {}
+variable "vpc_id" {
+    default = "vpc-0978f172dbb95c518"
+    type = string
+}
 
 #public subnets ids
 variable "public_subnet_ids" {
+    default = [ "subnet-0f77c1eb26880aee1" , "subnet-096403d5c1d1d9b0e" ]
     description = "List of public subnet IDs where alb and autoscaling group instances will be deployed"
     type        = list(string)
 }
 
 # security group id
-variable "security_group_id" {}
+variable "security_group_id" {
+    default = "sg-0e9e8e41f8a719ecb"
+    type = string
+}
 
 # name of our alb
 variable "alb_name" {
