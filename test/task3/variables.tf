@@ -15,9 +15,9 @@ variable "security_group_name" {
     default = "my-security-group"
 }
 
-#ami id
+#ami id for Ubuntu 22.04
 variable "ami_id" {
-    default = "ami-04b4f1a9cf54c11d0"
+    default = "ami-0e1bed4f06a3b463d"
 }
 
 #instance name
