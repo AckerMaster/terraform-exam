@@ -45,4 +45,20 @@ variable "instance_type" {
     description = "instance type for our EC2"
 }
 
+
+# name of our launch template
+variable "lt_name" {
+    default = "liad-launch-template"
+}
+
+# name of our autoscaling group
+variable "asg_name" {
+    default = "liad-autoscaling-group"
+}
+
+# name of our EC2 instance
+variable "ec2_instance_name" {
+    default = "liad-instance"
+}
+
 # ----------------------------------------------------#
