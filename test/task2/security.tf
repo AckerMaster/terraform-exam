@@ -27,7 +27,7 @@ resource "aws_security_group" "liad_security_group_test" {
     }
 
     tags = {
-      Name = "liad-security-group-test"
+      Name = var.security_group_name
     }
 }
 
