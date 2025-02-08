@@ -25,8 +25,12 @@ Auto Scaling related:
 
 # ----- Important ! ----- #
 
-Once you run "terraform apply" it will ask for the following user inputs:
+for this settings, adjust them to match your desired state
 
-- public_subnet_ids (enter a list of subnets ID, for example ["subnet-id-1" , ""subnet-id-1"])
+- public_subnet_ids (enter a list of subnets ID, for example ["subnet-id-1" , ""subnet-id-2"])
+make sure that each subnet is from different AZ and that ALL subnets belong to the same VPC
+
 - vpc_id (enter a VPC ID)
+
 - security_group_id (enter a security group ID)
+make sure the security group is attached to the VPC
