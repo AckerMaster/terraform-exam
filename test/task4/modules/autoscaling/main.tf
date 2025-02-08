@@ -17,3 +17,24 @@ resource "aws_launch_template" "launch_template" {
     }
   }
 }
+
+
+resource "aws_autoscaling_group" "auto_scaling_group" {
+  name                = var.auto_scaling_group_name
+  min_size            = var.min_size
+  max_size            = var.max_size
+  desired_capacity    = var.desired_capacity
+  vpc_zone_identifier = var.public_subnet_ids
+  target_group_arns   = [var.target_group_arn]
+
+  launch_template {
+    id      = aws_launch_template.launch_template.id
+    version = "$Latest"
+  }
+
+  tag {
+    key                 = "Name"
+    value               = var.instance_name
+    propagate_at_launch = true
+  }
+}
