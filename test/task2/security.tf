@@ -3,8 +3,8 @@
 resource "aws_security_group" "liad_security_group_test" {
 
     # associating the sg with our vpc
-    vpc_id = data.aws_vpc.liad_vpc_test
-    
+    vpc_id = data.aws_vpc.liad_vpc_test.id
+
     ingress {
         from_port   = 22
         to_port     = 22
