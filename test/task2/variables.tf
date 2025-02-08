@@ -4,14 +4,17 @@ variable "region" {
     default = "us-east-1"
 }
 
+# security group
 variable "security_group_name" {
     default = "liad-security-group-test"
 }
 
+# AMI for Ubuntu 22.04
 variable "ami_id" {
-    default = "ami-04b4f1a9cf54c11d0"
+    default = "ami-0e1bed4f06a3b463d"
 }
 
+# instance name
 variable "instance_name" {
     default = "liad-ec2-instance-test"
 }
