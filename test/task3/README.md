@@ -5,7 +5,7 @@ they are located inside modules/
 
 to run this code, change the following inside variables.tf:
 
-Global:
+Global configuration:
 
 - region
 
